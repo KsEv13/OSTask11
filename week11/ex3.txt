@@ -1,0 +1,13 @@
+Output of the Program 1:
+Hello
+Hello
+Output of the Program 2:
+Hello
+
+
+In the first program, the line is printed to the buffer, but since there 
+is no new line, the current line is simply stored in it. Then the 
+program executes the fork, and both forked buffers are flushed when the 
+corresponding processes exit.
+In the second case, the buffer causes to be flushed before the fork, so 
+that there is no output left when the forked process exits.
